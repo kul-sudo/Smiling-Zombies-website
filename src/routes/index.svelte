@@ -31,7 +31,7 @@
 	</span>
 	
 	<div class="screenshot">
-		<img rel="preload" src="screenshot.png" alt="first-screenshot">
+		<img src="screenshot.png" alt="first-screenshot" loading="lazy">
 	</div>
 
 	<div class="download">

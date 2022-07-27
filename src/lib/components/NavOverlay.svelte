@@ -2,14 +2,13 @@
     export let open;
 
     import { draggable } from 'svelte-drag'
-
 </script>
     
 {#if open}
     <div class="overlay" use:draggable={{gpuAcceleration: true, bounds: { bottom: 0}}}>
         <div class="close" on:click={() => open = false}>X</div>
         <ul>
-            <li><a id="index" href="/">Index</a></li>
+            <li><a id="index" href="/">Home</a></li>
             <li><a id="about" href="/about">About</a></li>
             <li><a id="download" href="/download">Download</a></li>
             <a id="source-code" href="https://github.com/kul-sudo/Smiling-Zombies" target="_blank">Source Code</a>  

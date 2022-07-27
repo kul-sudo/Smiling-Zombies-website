@@ -8,7 +8,7 @@
     <span id="download-caption">Download Smiling Zombies</span>
 
     <div class="screenshot">
-        <img src="download-screenshot.png" alt="download-screenshot">
+        <img src="download-screenshot.png" alt="download-screenshot" loading="lazy">
     </div>
 
     <div class="operating-system">

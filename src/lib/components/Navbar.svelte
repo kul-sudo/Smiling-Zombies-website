@@ -8,9 +8,10 @@
 
 <main>
     <nav class="header">
-        <img id="logo" src="logo.png" alt="navbar-logo" on:click={() => window.location.href = '/'}>
+        <img id="logo" src="logo.png" alt="navbar-logo" loading="lazy" on:click={() => window.location.href = '/'}>
         <a href="/">Home</a>
         <a href="/about">About</a>
+        <a href="/download">Download</a>
         <a href="https://github.com/kul-sudo/Smiling-Zombies" target="_blank">Source Code</a>
         <div class="three-dots" on:click={() => openOverlay = true}>
             <div></div>
