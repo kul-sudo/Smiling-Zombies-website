@@ -37,9 +37,9 @@
         <a id="download" href="/download" style="color: {$font_color};">Download</a>
         <a id="source-code" href="https://github.com/kul-sudo/Smiling-Zombies" target="_blank" style="color: {$font_color};">Source Code</a>
         <div class="three-dots" on:click={() => openOverlay = true}>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div style="background-color: {$font_color};"></div>
+            <div style="background-color: {$font_color};"></div>
+            <div style="background-color: {$font_color};"></div>
         </div>
         <span id="mode" style="background-color: {$mode_color}; color: {$mode_font_color};" on:click={switch_mode}>{$mode} mode</span>
     </nav>
@@ -58,8 +58,8 @@
         display: flex;
         width: 2.1875rem;
         height: 0.25rem;
-        background-color: black;
         margin: 0.375rem 0;
+		transition: color 0.3s;
     }
 
     .header {
@@ -122,6 +122,10 @@
 
         .three-dots {
             display: block;
+        }
+
+        #mode {
+            margin-left: 3rem;
         }
     }
 
