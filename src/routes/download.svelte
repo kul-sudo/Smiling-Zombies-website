@@ -1,11 +1,17 @@
 <script>
 	import Navbar from '$lib/components/Navbar.svelte'
+    import { background_color, font_color } from '../stores'
+	import { browser } from '$app/env';
+
+	$: browser && (document.body.style.backgroundColor = $background_color);
+	$: browser && (document.body.style.transition  = 'background-color 0.3s');
 </script>
+
 
 <main>
 	<Navbar></Navbar>
     
-    <span id="download-caption">Download Smiling Zombies</span>
+    <span id="download-caption" style="color: {$font_color};">Download Smiling Zombies</span>
 
     <div class="screenshot">
         <img src="download-screenshot.png" alt="download-screenshot" loading="lazy">
@@ -35,6 +41,7 @@
         font-size: 1.5625rem;
         font-family: 'Poppins', sans-serif;
         font-weight: 500;
+        transition: color 0.3s;
     }
 
     .screenshot {

@@ -1,5 +1,10 @@
 <script>
 	import Navbar from '$lib/components/Navbar.svelte'
+	import { background_color, font_color, logo_color } from '../stores'
+	import { browser } from '$app/env';
+
+	$: browser && (document.body.style.backgroundColor = $background_color);
+	$: browser && (document.body.style.transition  = 'background-color 0.3s');
 
 	let adjective = '(click)'
 
@@ -13,6 +18,7 @@
 		'a zombie-friendly',
 		'a lovely'
 	]
+
 	function change_adjective(current) {
 		const choose_from = adjectives.filter(item => item != current)
 		const random = Math.floor(Math.random() * choose_from.length);
@@ -20,12 +26,13 @@
 	}
 </script>
 
+
 <main>
 	<Navbar></Navbar>
-
-	<span id="desc">Play as a zombie. Unusual, isn't it?</span>
-
-	<span id="desc-2">
+	
+	<span id="desc" style="color: {$font_color};">Play as a zombie. Unusual, isn't it?</span>
+	
+	<span id="desc-2" style="color: {$font_color};">
 		Smiling Zombies is<a id="adjective" on:click={() => change_adjective(adjective)}>{adjective}</a> and free PvS (Player Versus Smilies) game
 		<br>in which you can play as a zombie ... not a casual zombie ... a zombie BOSS!
 	</span>
@@ -33,7 +40,7 @@
 	<div class="screenshot">
 		<img src="screenshot.png" alt="first-screenshot" loading="lazy">
 	</div>
-
+	
 	<div class="download">
 		<a id="download" href="./download">DOWNLOAD</a>
 	</div>
@@ -51,6 +58,7 @@
 		font-family: 'Poppins', sans-serif;
 		font-weight: 500;
 		user-select: none;
+		transition: color 0.3s;
 	}
 
 	#adjective {
@@ -59,6 +67,8 @@
 		color: gray;
 		background-color: gainsboro;
 		margin-left: 10px;
+		border-radius: 10%;
+		transition: color 0.3s;
 	}
 
 	#desc-2 {
@@ -70,6 +80,7 @@
 		font-size: 1.3rem;
 		font-family: 'Poppins', sans-serif;
 		font-weight: 500;
+		transition: color 0.3s;
 	}
 
 	.download {

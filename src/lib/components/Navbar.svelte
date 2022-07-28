@@ -1,23 +1,47 @@
 <script>
 	import NavOverlay from '../components/NavOverlay.svelte';
-	
+    import { background_color, font_color, logo_color, mode, mode_color, mode_font_color } from '../../stores'
+    
 	let openOverlay = false;
+    
+    function switch_mode() {
+        if ($mode === 'Dark') {
+            $mode = 'Light'
+            $mode_color = '#e3e3e3'
+            $mode_font_color = '#000000'
+            $background_color = '#232937'
+            $font_color = '#ffffff'
+            $logo_color = 'white'
+        } else {
+            $mode = 'Dark'
+            $mode_color = '#000000'
+            $mode_font_color = '#ffffff'
+            $background_color = '#ffffff'
+            $font_color = '#000000'
+            $logo_color = 'black'
+        }
+    }
 </script>
 
 <NavOverlay bind:open={openOverlay}/>
 
 <main>
     <nav class="header">
-        <img id="logo" src="logo.png" alt="navbar-logo" loading="lazy" on:click={() => window.location.href = '/'}>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/download">Download</a>
-        <a href="https://github.com/kul-sudo/Smiling-Zombies" target="_blank">Source Code</a>
+        {#if $logo_color === 'black'}
+            <a id="logo" href="/" style="content: url(logo.png);"></a>
+        {:else}
+            <a id="logo" href="/" style="content: url(logo-white.png);"></a>
+        {/if}
+        <a id="home" href="/" style="color: {$font_color};">Home</a>
+        <a id="about" href="/about" style="color: {$font_color};">About</a>
+        <a id="download" href="/download" style="color: {$font_color};">Download</a>
+        <a id="source-code" href="https://github.com/kul-sudo/Smiling-Zombies" target="_blank" style="color: {$font_color};">Source Code</a>
         <div class="three-dots" on:click={() => openOverlay = true}>
             <div></div>
             <div></div>
             <div></div>
         </div>
+        <span id="mode" style="background-color: {$mode_color}; color: {$mode_font_color};" on:click={switch_mode}>{$mode} mode</span>
     </nav>
 </main>
 
@@ -52,8 +76,8 @@
         cursor: pointer;
         margin-right: 5rem;
         text-align: center;
-        object-fit: cover;
         user-select: none;
+        object-fit: cover;
     }
 
     .header a {
@@ -68,14 +92,31 @@
         user-select: none;
         transition: all 0.15s ease 0s;
         transition: 0.15s;
+		transition: background-color 0.3s;
+		transition: color 0.3s;
     }
 
-    a:hover {
+    #home:hover, #about:hover, #download:hover, #source-code:hover {
         background-color: #EBEBEB;
+		transition: background-color 0.1s;
+    }
+
+    #mode {
+        padding: 1rem;
+        background-color: rgb(30, 30, 30);
+        border-radius: 10%;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+        font-size: 1.125rem;
+        font-family: 'Poppins', sans-serif;
+        user-select: none;
+        text-align: center;
+		transition: color 0.3s;
     }
 
     @media all and (max-width: 60rem) {
-        .header a {
+        #home, #about, #download, #source-code {
             display: none;
         }
 

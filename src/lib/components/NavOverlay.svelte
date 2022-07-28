@@ -13,7 +13,6 @@
             <li><a id="download" href="/download">Download</a></li>
             <a id="source-code" href="https://github.com/kul-sudo/Smiling-Zombies" target="_blank">Source Code</a>  
         </ul>
-        
     </div>
 {/if}
     

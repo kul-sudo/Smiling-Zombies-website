@@ -1,13 +1,18 @@
 <script>
 	import Navbar from '$lib/components/Navbar.svelte'
+	import { background_color, font_color } from '../stores'
+	import { browser } from '$app/env';
+    
+	$: browser && (document.body.style.backgroundColor = $background_color);
+	$: browser && (document.body.style.transition  = 'background-color 0.3s');
 </script>
 
 <main>
 	<Navbar></Navbar>
 
-	<span id="about">About</span>
-    <span id="desc">Smiling Zombies is a vigorous clash of zombies and smilies.<br>Zombify every single smiley and form your own tribe of zombies.<br>The smilies look like innocent harmless cuties, but they might turn out to be beastly.<br>Don't let them endear your with their cuteness.</span>
-    <a id="learn-more" href="https://github.com/kul-sudo/Smiling-Zombies/blob/main/README.md" target="_blank">Learn more</a>
+	<span id="about" style="color: {$font_color};">About</span>
+    <span id="desc" style="color: {$font_color};">Smiling Zombies is a vigorous clash of zombies and smilies.<br>Zombify every single smiley and form your own tribe of zombies.<br>The smilies look like innocent harmless cuties, but they might turn out to be beastly.<br>Don't let them endear your with their cuteness.</span>
+    <a id="learn-more" href="https://github.com/kul-sudo/Smiling-Zombies/blob/main/README.md" target="_blank" style="color: {$font_color};">Learn more</a>
 </main>
 
 <style>
