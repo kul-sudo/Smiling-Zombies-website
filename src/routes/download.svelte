@@ -35,6 +35,7 @@
     #download-caption {
         display: flex;
         margin-top: 1rem;
+        text-align: center;
         align-items: center;
         justify-content: center;
         color: black;
@@ -45,16 +46,17 @@
     }
 
     .screenshot {
-        margin-top: 3rem;
-        text-align: center;
+		display: block;
+		margin-top: 3rem;
+		text-align: center;
     }
 
     .screenshot img {
-        text-align: center;
-        user-select: none;
-        height: auto;
-		width: 35rem;
-        object-fit: cover;
+		padding: 0;
+		display: block;
+		margin: 0 auto;
+		max-height: 35%;
+		max-width: 35%;
     }
 
     .operating-system {
@@ -83,5 +85,82 @@
 
     #windows-button:hover {
         background-color: rgb(245, 245, 245);
+    }
+
+    @media all and (max-width: 43.75rem) {
+		.screenshot img {
+			max-height: 35%;
+			max-width: 35%;
+		}
+    }
+
+	@media all and (max-width: 36.25rem) {
+		.screenshot img {
+			max-height: 35%;
+			max-width: 35%;
+		}
+    }
+
+	@media all and (max-width: 23.75rem) {
+		.screenshot img {
+			max-height: 70%;
+			max-width: 70%;
+		}
+    }
+
+	@media all and (max-width: 47.5rem) {
+		.screenshot img {
+			max-height: 85%;
+			max-width: 85%;
+		}
+    }
+
+	@media all and (max-width: 47.5rem) {
+		.screenshot img {
+			max-height: 85%;
+			max-width: 85%;
+		}
+    }
+
+	@media all and (max-width: 87.5rem) {
+		.screenshot img {
+			max-height: 45%;
+			max-width: 45%;
+		}
+    }
+
+	@media all and (max-width: 45rem) {
+		.screenshot img {
+			max-height: 70%;
+			max-width: 70%;
+		}
+    }
+
+	@media all and (max-width: 	75rem) {
+		.screenshot img {
+			max-height: 60%;
+			max-width: 60%;
+		}
+    }
+
+	@media all and (max-width: 	25rem) {
+		.screenshot img {
+			max-height: 80%;
+			max-width: 80%;
+		}
+    }
+
+	@media all and (max-width: 	22.188rem) {
+		.screenshot img {
+			max-height: 90%;
+			max-width: 90%;
+		}
+    }
+
+    @media all and (max-width: 29.688rem) {
+		.screenshot img {
+			max-height: 92%;
+			max-width: 92%;
+		}
     }
 </style>

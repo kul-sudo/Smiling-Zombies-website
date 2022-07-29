@@ -48,10 +48,15 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
     
+    main {
+        margin: auto;
+    }
+
     .three-dots {
         display: none;
         margin-left: 3rem;
         cursor: pointer;
+        overflow-y: hidden;
     }
 
     .three-dots div {
@@ -129,4 +134,23 @@
         }
     }
 
+    @media all and (max-width: 39.375rem) {
+        #home, #about, #download, #source-code {
+            display: none;
+        }
+
+        #logo {
+            display: none;
+        }
+
+        .three-dots {
+            display: block;
+            text-align: center;
+        }
+
+        #mode {
+            display: block;
+            margin-left: 3rem;
+        }
+    }
 </style>

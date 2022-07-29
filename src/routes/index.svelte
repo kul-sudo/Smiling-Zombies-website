@@ -89,7 +89,7 @@
 		margin-top: 3rem;
 		user-select: none;
 		cursor: pointer;
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 		font-family: 'Poppins', sans-serif;
 	}
 
@@ -110,11 +110,80 @@
 	}
 
 	.screenshot img {
-		user-select: none;
-		object-fit: cover;
-		height: auto;
-		width: 35rem;
-		text-align: center;
-		object-fit: cover;
+		padding: 0;
+		display: block;
+		margin: 0 auto;
+		max-height: 35%;
+		max-width: 35%;
 	}
+
+	@media all and (max-width: 43.75rem) {
+		.screenshot img {
+			max-height: 35%;
+			max-width: 35%;
+		}
+    }
+
+	@media all and (max-width: 36.25rem) {
+		.screenshot img {
+			max-height: 35%;
+			max-width: 35%;
+		}
+    }
+
+	@media all and (max-width: 23.75rem) {
+		.screenshot img {
+			max-height: 70%;
+			max-width: 70%;
+		}
+    }
+
+	@media all and (max-width: 47.5rem) {
+		.screenshot img {
+			max-height: 85%;
+			max-width: 85%;
+		}
+    }
+
+	@media all and (max-width: 47.5rem) {
+		.screenshot img {
+			max-height: 85%;
+			max-width: 85%;
+		}
+    }
+
+	@media all and (max-width: 87.5rem) {
+		.screenshot img {
+			max-height: 45%;
+			max-width: 45%;
+		}
+    }
+
+	@media all and (max-width: 38.125rem) {
+		.screenshot img {
+			max-height: 70%;
+			max-width: 70%;
+		}
+    }
+
+	@media all and (max-width: 	76.875rem) {
+		.screenshot img {
+			max-height: 70%;
+			max-width: 70%;
+		}
+    }
+
+	@media all and (max-width: 	25rem) {
+		.screenshot img {
+			max-height: 80%;
+			max-width: 80%;
+		}
+    }
+
+	@media all and (max-width: 	22.188rem) {
+		.screenshot img {
+			max-height: 90%;
+			max-width: 90%;
+		}
+    }	
 </style>
