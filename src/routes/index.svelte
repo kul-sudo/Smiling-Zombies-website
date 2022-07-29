@@ -1,6 +1,6 @@
 <script>
 	import Navbar from '$lib/components/Navbar.svelte'
-	import { background_color, font_color, logo_color } from '../stores'
+	import { background_color, font_color } from '../stores'
 	import { browser } from '$app/env';
 
 	$: browser && (document.body.style.backgroundColor = $background_color);
