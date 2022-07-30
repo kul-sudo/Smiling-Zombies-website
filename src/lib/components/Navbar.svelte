@@ -1,9 +1,9 @@
 <script>
-	import NavOverlay from '../components/NavOverlay.svelte';
+    import NavOverlay from '../components/NavOverlay.svelte';
     import { background_color, font_color, logo_color, mode, mode_color, mode_font_color } from '../../stores'
-    
+
 	let openOverlay = false;
-    
+
     function switch_mode() {
         if ($mode === 'Dark') {
             $mode = 'Light'
@@ -12,6 +12,7 @@
             $background_color = '#232937'
             $font_color = '#ffffff'
             $logo_color = 'white'
+            console.log($mode)
         } else {
             $mode = 'Dark'
             $mode_color = '#000000'
